@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>soma-stripe demo — test-mode donation flow</title>
+<link rel="stylesheet" href="/vendor/soma-stripe/soma-stripe-donate.css">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    max-width: 640px;
+    margin: 64px auto;
+    padding: 0 24px;
+    color: #1a1a1a;
+    line-height: 1.55;
+  }
+  h1 { font-size: 26px; margin-bottom: 4px; }
+  .badge {
+    display: inline-block;
+    background: #fff3cd;
+    color: #7a5a00;
+    border: 1px solid #ffe08a;
+    border-radius: 999px;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+  }
+  .donate-btn {
+    background: #635bff;
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 24px 0;
+  }
+  code { background: #f4f4f4; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+  .card { background: #fafafa; border: 1px solid #eee; border-radius: 10px; padding: 16px 20px; margin: 24px 0; font-size: 14px; }
+  a { color: #4b3fe0; }
+</style>
+</head>
+<body>
+
+<span class="badge">STRIPE TEST MODE — no real money moves</span>
+<h1>soma-stripe — one-time donation demo</h1>
+<p>
+  This page proves the <code>soma-stripe</code> portable component end to end: click Donate,
+  pick an amount, land on Stripe's real hosted Checkout page in <strong>test mode</strong>,
+  come back here to a thank-you page. Nothing on this page or in its Netlify Function ever
+  touches a live Stripe key — see
+  <a href="https://github.com/eldrgeek/soma-stripe-demo" target="_blank" rel="noopener">source</a>.
+</p>
+
+<button class="donate-btn" data-soma-donate>Donate (test mode)</button>
+
+<div class="card">
+  <strong>If the button shows a setup error</strong> instead of redirecting to Stripe: this
+  site's <code>STRIPE_SECRET_KEY</code> Netlify env var isn't set yet. That's the one
+  irreducible step reserved for a human — signing up for a Stripe account (even just to get
+  test-mode keys) isn't something an AI does on your behalf. See the repo README for the exact
+  one-command fix.
+</div>
+
+<p style="font-size:13px;color:#666;">
+  Portable component: <a href="https://github.com/eldrgeek/SOMA/tree/main/standards/soma-stripe" target="_blank" rel="noopener"><code>SOMA/standards/soma-stripe/</code></a>
+  — copy three files into any SOMA app to add this same donate flow.
+</p>
+
+<script src="/vendor/soma-stripe/soma-stripe-donate.js"
+        data-site="soma-stripe demo"
+        data-amounts="5,10,25,50"
+        defer></script>
+
+<link rel="stylesheet" href="/vendor/soma-feedback/soma-feedback.css">
+<script src="/vendor/soma-feedback/soma-feedback.js"
+        data-site="soma-stripe-demo"
+        data-label="Feedback"
+        defer></script>
+
+</body>
+</html>

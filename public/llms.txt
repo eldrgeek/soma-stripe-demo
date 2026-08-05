@@ -1,0 +1,10 @@
+# soma-stripe-demo
+
+Live, test-mode-only reference deployment of the `soma-stripe` portable SOMA
+component: a one-time donation via Stripe Checkout.
+
+- Source of the portable component: https://github.com/eldrgeek/SOMA/tree/main/standards/soma-stripe
+- This repo: https://github.com/eldrgeek/soma-stripe-demo
+- Purpose: prove the click-through mechanism (donate button -> Stripe
+  Checkout -> thank-you page) works end to end, entirely in Stripe test mode.
+- No live/production Stripe credentials are used anywhere in this deployment.

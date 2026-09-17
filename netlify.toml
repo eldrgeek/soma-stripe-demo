@@ -1,4 +1,7 @@
 [build]
+  # WQ-296: esbuild strips types without checking them, so typecheck the
+  # functions here; a type error now fails the deploy instead of shipping.
+  command = "npm run typecheck"
   publish = "public"
   functions = "netlify/functions"
 

@@ -2,7 +2,10 @@
   "name": "soma-stripe-demo",
   "version": "1.0.0",
   "private": true,
-  "description": "Standalone live demo of the soma-stripe portable component — a one-time Stripe Checkout donation in test mode.",
+  "description": "Standalone live demo of the soma-stripe portable component \u2014 a one-time Stripe Checkout donation in test mode.",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.netlify.json"
+  },
   "dependencies": {
     "stripe": "^16.0.0"
   },
